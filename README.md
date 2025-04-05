@@ -15,7 +15,7 @@ Before start, make sure [Git](https://git-scm.com/) and [Hugo](https://gohugo.io
 
 
 
-Create and enter ```Website``` folder and run the ```git init``` command:
+Create and enter `Website` folder and run the `git init` command:
 
 ```bash
 git init
@@ -68,14 +68,14 @@ draft = false
 
 ## Custom
 
-Site config ```hugo.toml```:
+Site config `hugo.toml`:
 
 ```toml
 baseURL = "https://example.com"
 languageCode = "en" # <html lang> ==> data/l10n.toml
 title = "Example Site" # Website Title
 copyright = "Name" # Footer copyright.
-#theme = "vortisil"
+theme = "vortisil" # Use theme.
 pagination.pagerSize = 9
 hasCJKLanguage = true
 enableEmoji = true
@@ -133,7 +133,7 @@ static/assets/imgs/favicon-32x32.png
 static/assets/imgs/apple-touch-icon.png
 ```
 
-Create ```assets/assets/scss/custom.scss``` and change the primary color:
+Create `assets/assets/scss/custom.scss` and change the primary color:
 
 ```scss
 [data-theme="light"] {
@@ -145,7 +145,7 @@ Create ```assets/assets/scss/custom.scss``` and change the primary color:
 }
 ```
 
-After much thought, I dropped the i18n system and added ```data/l10n.toml```.
+After much thought, I dropped the i18n system and added `data/l10n.toml`.
 
 You can use a git patch or pull request to help complete the translation of l10n.toml.
 
@@ -170,7 +170,7 @@ powered_by = 'Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https:/
 license = 'This article is licensed under <a href="%s" target="_blank" rel="license noopener noreferrer">__license__</a>'
 ```
 
-Use ```data/works.toml``` to display works/projects on the homepage.
+Use `data/works.toml` to display works/projects on the homepage.
 
 ```toml
 [[works]]
@@ -181,7 +181,7 @@ Use ```data/works.toml``` to display works/projects on the homepage.
 
 ## Deployments
 
-Copy this to ```.github/workflows/gh-pages.yaml``` for building the Hugo website and deploying it to GitHub Pages.
+Copy this to `.github/workflows/gh-pages.yaml` for building the Hugo website and deploying it to GitHub Pages.
 
 ```yaml
 # Sample workflow for building and deploying a Hugo site to GitHub Pages
@@ -260,7 +260,7 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-If you have a domain, add ``CNAME`` and configure the domain dns settings.
+If you have a domain, add `CNAME` and configure the domain dns settings.
 
 ```bash
 echo "yourdomain.com" >> CNAME
