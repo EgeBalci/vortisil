@@ -1,8 +1,11 @@
 {{ define "main" }}
 
 {{ with .Params.cover }}
+{{ $cover := resources.GetMatch . }}
+{{ $coverResize := $cover.Resize "800x webp"}}
 <section class="cover" id="cover">
-  <img src="{{ . }}" alt="Cover Image" class="cover-image" loading="lazy">
+  <img src="{{ $coverResize.RelPermalink }}" alt="Cover Image" class="cover-image" loading="lazy">
+  <!-- <img src="{{ . }}" alt="Cover Image" class="cover-image" loading="lazy"> -->
 </section>
 {{ end }}
 

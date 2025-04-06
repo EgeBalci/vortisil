@@ -6,7 +6,7 @@ author = ""
 authorList = ""
 license = "CC BY-NC-SA 4.0"
 license_url = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
-cover = "/assets/imgs/hero.webp"
+cover = "/assets/imgs/hero.jpg"
 math = true
 draft = false
 +++
