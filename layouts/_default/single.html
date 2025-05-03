@@ -10,15 +10,15 @@
 
 <div class="article-tag">
   {{ if eq .Section "posts" }}
+  <span class="article-author">{{ index $.Site.Data.l10n "by" }}&nbsp;{{ or .Params.author .Site.Params.author }}</span>
   {{ $datePostMachine := .Date | time.Format "2006-01-02T15:04:05" }}
   {{ $datePostHuman := .Date | time.Format "2006-01-02" }}
-  <time datetime="{{ $datePostMachine }}">{{ index $.Site.Data.l10n "posted_on" }} {{ $datePostHuman }}&nbsp;,&nbsp;</time>
+  <time datetime="{{ $datePostMachine }}">{{ index $.Site.Data.l10n "posted_on" }} {{ $datePostHuman }}</time>
   {{ with .Params.lastmodified }}
   {{ $dateLastmodMachine := . | time.Format "2006-01-02T15:04:05" }}
   {{ $dateLastmodHuman := . | time.Format "2006-01-02" }}
-  <time datetime="{{ $dateLastmodMachine }}">{{ index $.Site.Data.l10n "last_modified" }} {{ $dateLastmodHuman }}&nbsp;,&nbsp;</time>
+  <time datetime="{{ $dateLastmodMachine }}">{{ index $.Site.Data.l10n "last_modified" }} {{ $dateLastmodHuman }}</time>
   {{ end }}
-  <span class="article-author">{{ index $.Site.Data.l10n "by" }}&nbsp;{{ or .Params.author .Site.Params.author }}</span>
   {{ else }}
   {{ end }}
 </div>
