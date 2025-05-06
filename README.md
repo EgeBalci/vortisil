@@ -8,6 +8,7 @@
 - All articles search
 - Responsive design
 - Rendering mathematical formulas with MathJax.js
+- Giscus Comments
 
 ## Quick Start
 
@@ -75,7 +76,7 @@ baseURL = "https://example.com"
 languageCode = "en" # <html lang> ==> data/l10n.toml
 title = "Example Site" # Website Title
 copyright = "Name" # Footer copyright.
-theme = "vortisil" # Use theme.
+theme = "vortisil"
 pagination.pagerSize = 9
 hasCJKLanguage = true
 enableEmoji = true
@@ -87,9 +88,21 @@ disableKinds = ["taxonomy","term"] # DO NOT MODIFY
     logoInvert = true # If the image logo needs to be turned on Image Colour Inversion.
     math = true
 
+[params.comments]
+    enabled = true
+    
+[params.comments.giscus]
+    repo = "username/reponame"
+    repoId = "repoid"
+    category = "Announcements"
+    categoryId = "categoryId"
+    mapping = "pathname"
+    lang = "en"
+
 [params.meta]
     description = "A fast, minimal and restrained Hugo theme." # Site description
-  
+
+
 [[menus.main]]
     identifier = "home"
     url = "/"

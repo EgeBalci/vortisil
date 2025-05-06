@@ -14,13 +14,30 @@
 }
 
 .works {
-    &-title>a {
-        &::before {
-            content: "[ ";
+    &-title {
+        display: flex;
+        flex-direction: column;
+
+        &-content>a {
+            &::before {
+                content: "[ ";
+            }
+
+            &::after {
+                content: " ]";
+            }
         }
 
-        &::after {
-            content: " ]";
+        &-desc {
+            margin-left: 2em;
+            opacity: .7;
+            font-style: italic;
+            font-size: 0.86rem;
+            font-weight: normal;
+
+            &::before{
+                content: "~ ";
+            }
         }
     }
 }
@@ -35,7 +52,7 @@
         flex-direction: column;
         margin: 5px 0 0 0;
     }
-    
+
     &-item {
         display: flex;
         flex-direction: row;

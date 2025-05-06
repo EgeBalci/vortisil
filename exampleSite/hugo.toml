@@ -14,9 +14,21 @@ disableKinds = ["taxonomy","term"] # DO NOT MODIFY
     logoInvert = true # If the image logo needs to be turned on Image Colour Inversion.
     math = true
 
+[params.comments]
+    enabled = false
+    
+[params.comments.giscus]
+    repo = ""
+    repoId = ""
+    category = ""
+    categoryId = ""
+    mapping = "pathname"
+    lang = "en"
+
 [params.meta]
     description = "A fast, minimal and restrained Hugo theme." # Site description
-  
+
+
 [[menus.main]]
     identifier = "home"
     url = "/"

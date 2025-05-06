@@ -36,8 +36,8 @@
         {{ range .Site.Data.works.works }}
         <div class="works-item">
             <div class="works-title">
-                <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-                <p>{{ .desc }}</p>
+                <div class="works-title-content"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></div>
+                <div class="works-title-desc" >{{ .desc }}</div>
             </div>
         </div>
         {{ end }}
