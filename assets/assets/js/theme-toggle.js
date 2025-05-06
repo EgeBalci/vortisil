@@ -9,15 +9,15 @@ document.documentElement.setAttribute('data-theme', currentTheme);
 themeToggleBtn.innerHTML = currentTheme === 'dark' ? lightIcon : darkIcon;
 
 const GISCUS_CONFIG = {
-    repo: '{{ .Site.Params.comments.giscus.repo }}',
-    repoId: '{{ .Site.Params.comments.giscus.reId }}',
-    category: '{{ .Site.Params.comments.giscus.category }}',
-    categoryId: '{{ .Site.Params.comments.giscus.categoryId }}',
-    mapping: '{{ .Site.Params.comments.giscus.mapping }}',
-    reactionsEnabled: '1',
-    emitMetadata: '0',
-    lang: '{{ .Site.Params.comments.giscus.lang }}',
-    theme: currentTheme
+    'repo': '{{ .Site.Params.comments.giscus.repo }}',
+    'repo-id': '{{ .Site.Params.comments.giscus.repoId }}',
+    'category': '{{ .Site.Params.comments.giscus.category }}',
+    'category-id': '{{ .Site.Params.comments.giscus.categoryId }}',
+    'mapping': '{{ .Site.Params.comments.giscus.mapping }}',
+    'reactions-enabled': '1',
+    'emit-metadata': '0',
+    'lang': '{{ .Site.Params.comments.giscus.lang }}',
+    'theme': currentTheme
 };
 
 function loadGiscus() {
