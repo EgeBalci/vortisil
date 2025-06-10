@@ -51,7 +51,7 @@ disableKinds = ["taxonomy","term"] # DO NOT MODIFY
 
 [markup]
     [markup.highlight]
-        style = "evergarden"
+        style = "monokai"
         tabWidth = 4
         codeFences = true
         guessSyntax = true

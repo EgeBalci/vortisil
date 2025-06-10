@@ -25,13 +25,13 @@
 
 {{ .Content }}
 
+{{ with .Params.license }}
 <div class="article-license">
-  {{ with .Params.license }}
   {{ $dynamicContent := safeHTML (printf (index $.Site.Data.l10n "license") $.Params.license_url) }}
   {{ $renderedContent := replace $dynamicContent "__license__" . }}
   <span>{{ $renderedContent | safeHTML }}.</span>
-  {{ end }}
 </div>
+{{ end }}
 
 {{ if .Site.Params.comments.enabled }}
   {{ partial "comments.html" . }}
