@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE = edge, chrome = 1">
 
 <title>
-  {{ partial "title" . }}
+	{{ partial "title" . }}
 </title>
 {{ $description := (.Content | plainify | truncate 80 "…") | safeHTML }}
 <meta name="description" content="{{ or $description .Site.Params.meta.description }}">
@@ -58,40 +58,26 @@
 {{ end }}
 
 <script>
-  (function () {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  })();
+	(function () {
+		const savedTheme = localStorage.getItem('theme') || 'light';
+		document.documentElement.setAttribute('data-theme', savedTheme);
+	})();
 </script>
 
-{{ with .Site.Params.logoImg }}
-{{ else }}
-{{ $woff2 := resources.Get "/assets/fonts/Jicaleta-Regular.woff2" | fingerprint }}
-{{ $woff := resources.Get "/assets/fonts/Jicaleta-Regular.woff" | fingerprint }}
-<style>
-  @font-face {
-    font-family: 'jicaleta';
-    src: url('{{ $woff2.RelPermalink }}') format('woff2'),
-    url('{{ $woff.RelPermalink }}') format('woff');
-  }
-</style>
-{{ end }}
 
-{{ if eq .Kind "page" | and (in .CurrentSection.Path "posts") }}
-{{ $woff2 := resources.Get "/assets/fonts/FiraCode-Regular.woff2" | fingerprint }}
-{{ $woff := resources.Get "/assets/fonts/FiraCode-Regular.woff" | fingerprint }}
+{{ $woff2 := resources.Get "/assets/fonts/VT323-Regular.woff2" | fingerprint }}
+{{ $woff := resources.Get "/assets/fonts/VT323-Regular.woff" | fingerprint }}
 <style>
-  @font-face {
-    font-family: 'Fira Code';
-    src: url('{{ $woff2.RelPermalink }}') format('woff2'),
-    url('{{ $woff.RelPermalink }}') format('woff');
-  }
-  
-  p {
-    text-indent: 2em;
-  }
+	@font-face {
+		font-family: 'VT323';
+		src: url('{{ $woff2.RelPermalink }}') format('woff2'),
+		url('{{ $woff.RelPermalink }}') format('woff');
+	}
+
+	p {
+		text-indent: 2em;
+	}
 </style>
-{{ end }}
 
 {{ with resources.Get "/assets/js/main.js" }}
 {{ if eq hugo.Environment "development" }}
@@ -124,18 +110,18 @@
 {{ if .Site.Params.math }}
 {{ if .Page.Params.math }}
 <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']]
-    },
-    svg: {
-      fontCache: 'global'
-    },
-    options: {
-      enableMenu: false
-    }
-  };
+	MathJax = {
+		tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			displayMath: [['$$', '$$'], ['\\[', '\\]']]
+		},
+		svg: {
+			fontCache: 'global'
+		},
+		options: {
+			enableMenu: false
+		}
+	};
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {{ end }}
