@@ -8,9 +8,9 @@
 		font-weight: bold;
 	}
 
-	&-title {
-		border-bottom: 1px solid var(--color-line);
-	}
+	// &-title {
+	// 	border-bottom: 1px solid var(--color-line);
+	// }
 }
 
 .works {
@@ -50,13 +50,13 @@
 	&-list {
 		display: flex;
 		flex-direction: column;
-		margin: 5px 0 0 0;
+		margin: 3px 0 0 0;
 	}
 
 	&-item {
 		display: flex;
 		flex-direction: row;
-		margin: 5px 0;
+		margin: 3px 0;
 	}
 
 	&-title {
