@@ -8,34 +8,34 @@ let currentTheme = localStorage.getItem('theme') ||
 document.documentElement.setAttribute('data-theme', currentTheme);
 themeToggleBtn.innerHTML = currentTheme === 'dark' ? lightIcon : darkIcon;
 
-const GISCUS_CONFIG = {
-    'repo': '{{ .Site.Params.comments.giscus.repo }}',
-    'repo-id': '{{ .Site.Params.comments.giscus.repoId }}',
-    'category': '{{ .Site.Params.comments.giscus.category }}',
-    'category-id': '{{ .Site.Params.comments.giscus.categoryId }}',
-    'mapping': '{{ .Site.Params.comments.giscus.mapping }}',
-    'reactions-enabled': '1',
-    'emit-metadata': '0',
-    'lang': '{{ .Site.Params.comments.giscus.lang }}',
-    'theme': currentTheme
-};
-
-function loadGiscus() {
-    const script = document.createElement('script');
-    script.src = 'https://giscus.app/client.js';
-    script.async = true;
-    script.crossOrigin = 'anonymous';
-
-    Object.entries(GISCUS_CONFIG).forEach(([key, value]) => {
-        script.setAttribute(`data-${key}`, value);
-    });
-
-    const container = document.getElementById('giscus-container');
-    container.innerHTML = '';
-    container.appendChild(script);
-}
-
-loadGiscus();
+// const GISCUS_CONFIG = {
+//     'repo': '{{ .Site.Params.comments.giscus.repo }}',
+//     'repo-id': '{{ .Site.Params.comments.giscus.repoId }}',
+//     'category': '{{ .Site.Params.comments.giscus.category }}',
+//     'category-id': '{{ .Site.Params.comments.giscus.categoryId }}',
+//     'mapping': '{{ .Site.Params.comments.giscus.mapping }}',
+//     'reactions-enabled': '1',
+//     'emit-metadata': '0',
+//     'lang': '{{ .Site.Params.comments.giscus.lang }}',
+//     'theme': currentTheme
+// };
+//
+// function loadGiscus() {
+//     const script = document.createElement('script');
+//     script.src = 'https://giscus.app/client.js';
+//     script.async = true;
+//     script.crossOrigin = 'anonymous';
+//
+//     Object.entries(GISCUS_CONFIG).forEach(([key, value]) => {
+//         script.setAttribute(`data-${key}`, value);
+//     });
+//
+//     const container = document.getElementById('giscus-container');
+//     container.innerHTML = '';
+//     container.appendChild(script);
+// }
+//
+// loadGiscus();
 
 themeToggleBtn.addEventListener('click', () => {
 
